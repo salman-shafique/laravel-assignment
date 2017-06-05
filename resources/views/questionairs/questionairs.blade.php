@@ -26,7 +26,7 @@
                         <tr id="{{$data->id}}">
                             <td class="record_id" data-id="{{$data->id}}">{{$data->id}}</td>
                             <td class="record_name" data-name="{{$data->name}}">{{$data->name}}</td><!-- $data->user->name -->
-                            <td>skjdnkfj
+                            <td> 0 
                                 <a href="{{ url('questionairs/crud') }}/{{$data->id}}" class="btn btn-success btn-xs pull-right"  >
                                 <span class="glyphicon glyphicon-plus"></span>
                                 </a>

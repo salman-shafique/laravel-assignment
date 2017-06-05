@@ -144,10 +144,10 @@ $('.save_Q').on('click',function(){
                 var mcq_values= $(this).find('.choice').val();
                 var mcq_correct= $(this).find('.radio_correct').val();
                 console.log(mcq_values);
-/*                mcqs_list.push({
+                mcqs_list.push({
                   value:mcq_values,
                   iscorrect:mcq_correct
-                })*/
+                })
                
             });
 

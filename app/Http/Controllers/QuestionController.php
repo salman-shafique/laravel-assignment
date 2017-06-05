@@ -59,7 +59,7 @@ class QuestionController extends Controller
 
             }
         }
-
+         return redirect('/questionairs');
 
     }
 
