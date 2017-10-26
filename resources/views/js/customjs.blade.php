@@ -80,6 +80,7 @@ $('.confirm_btn').on('click',function (argument) {
 
 /*=======================Question peage Events======================*/
 var counter=0;
+var counter_choices=0;
 $('.add_question').on('click',function () {
 	counter++;
   $('.Questions_main_container').append('<div class="row ques_list"> <div class="question_selector"> <div class="form-group"> <label class="col-md-4 control-label" >Question Type</label> <div class="col-md-3"><select name="data[from_'+counter+'][qt]" class="form-control qt"> <option value="null" selected>---Select Type----</option> <option value="text">Text</option> <option value="mcq">Multiple Choice (Single Option)</option> </select> </div><div class="col-md-2"> <button class="btn btn-danger btn-sm pull-right delete_question" > <span class="glyphicon glyphicon-trash "></span> Delete Question </button> </div></div></div><div class="question_container"> </div><hr> </div>');
@@ -111,8 +112,8 @@ $(this).closest('.row').find('.question_container').empty();
 });
 
 $('.Questions_main_container').on('click','.add_choice_btn',function () {
- 
-    $(this).closest('.question_container').find('.choices').append(' <div class="form-group mcqs"><div class="child"> <label class="col-md-4 control-label" for="Name">Choice 1</label> <div class="col-md-4"> <input id="Name" name="data[from_'+counter+'][answer][]" type="text" placeholder="Enter Option" class="form-control input-md choice" required=""> </div><div class="col-md-1"> <input name="data[from_'+counter+'][correct'+counter+'][]" type="radio" class="radio_correct"> Correct? </div><div class="col-md-2"> <button class="btn btn-danger btn-sm pull-right delete_choice" > <span class="glyphicon glyphicon-trash"></span> Delete Choice </button> </div></div></div>');
+ 		counter_choices++;
+    $(this).closest('.question_container').find('.choices').append(' <div class="form-group mcqs"><div class="child"> <label class="col-md-4 control-label" for="Name">Choice 1</label> <div class="col-md-4"> <input id="Name" name="data[from_'+counter+'][answer][]" type="text" placeholder="Enter Option" class="form-control input-md choice" required=""> </div><div class="col-md-1"> <input name="data[from_'+counter+'][correct]['+counter_choices+']" type="checkbox" class="radio_correct"> Correct? </div><div class="col-md-2"> <button class="btn btn-danger btn-sm pull-right delete_choice" > <span class="glyphicon glyphicon-trash"></span> Delete Choice </button> </div></div></div>');
 });
 $('.Questions_main_container').on('click','.delete_choice',function () {
 

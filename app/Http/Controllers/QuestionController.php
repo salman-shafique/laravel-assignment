@@ -63,7 +63,7 @@ class QuestionController extends Controller
         if (isset($mainData['data'])) {
             
            
-            dd($mainData);
+            // dd($mainData);
             foreach ($mainData['data'] as $key => $value) {
                 // dd($mainData['data'][$key]['question']);
                 $theQuestion = new Questions;
