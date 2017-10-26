@@ -84,8 +84,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
     <script src="{{ asset('assets/vendors/jquery/jquery-3.2.1.min.js') }}" ></script>
     <script src="{{ asset('assets/vendors/bootstrap-3.3.7-dist/js/bootstrap.js') }}" ></script>
-    <script src="{{ asset('assets/js/custom.js') }}" ></script>
-
+<!--     <script src="{{ asset('assets/js/custom.js') }}" ></script>
+ -->    @include('js.customjs')
 
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}

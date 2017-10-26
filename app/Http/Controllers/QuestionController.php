@@ -39,27 +39,52 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-       /*dd($request->data);*/
+       // dd('asdfasd');
 
-        if (isset($request->data)) {
-            foreach ($request->data as  $result ) {
-        $question = new Questions;
-        $answer = new Answers;                
-                $question->questionair_id_fk=$request->input('id');
-                $question->question_type=$result['question_type'];
-                $question->question=$result['question'];
-               /* $question->save();*/
-                if ($question->save()) {
-                    $answer->question_id_fk=$question->id;
-                    $answer->answers=$result['answer'];
+        // if (isset($request->data)) {
+        //     foreach ($request->data as  $result ) {
+        //         $question = new Questions;
+        //         $answer = new Answers;                
+        //         $question->questionair_id_fk=$request->input('id');
+        //         $question->question_type=$result['question_type'];
+        //         $question->question=$result['question'];
+        //        /* $question->save();*/
+        //         if ($question->save()) {
+        //             $answer->question_id_fk=$question->id;
+        //             $answer->answers=$result['answer'];
+        //             $answer->status=1;
+        //             $answer->save();
+        //         };
+
+
+        //     }
+        // }
+        $mainData =  $request->all();
+        if (isset($mainData['data'])) {
+            
+           
+            dd($mainData);
+            foreach ($mainData['data'] as $key => $value) {
+                // dd($mainData['data'][$key]['question']);
+                $theQuestion = new Questions;
+                $theQuestion->questionair_id_fk=(int)$request->input('questionaire_id');
+                $theQuestion->question=$mainData['data'][$key]['question'];
+                $theQuestion->question_type=$mainData['data'][$key]['qt'];
+
+                if($theQuestion->save()){
+                    foreach ($mainData['data'][$key]['answer'] as $key2 => $value2) {
+                    $answer = new Answers();
+                    $answer->question_id_fk=$theQuestion->id;
+                    $answer->answers=$value2;
                     $answer->status=1;
                     $answer->save();
-                };
 
+               }  
+                }
 
             }
         }
-         return redirect('/questionairs');
+         return redirect()->route('questionairs');
 
     }
 

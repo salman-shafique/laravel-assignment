@@ -26,9 +26,9 @@
                         <tr id="{{$data->id}}">
                             <td class="record_id" data-id="{{$data->id}}">{{$data->id}}</td>
                             <td class="record_name" data-name="{{$data->name}}">{{$data->name}}</td><!-- $data->user->name -->
-                            <td> 0 
+                            <td> {{count($data->questions)}}
                                 <a href="{{ url('questionairs/crud') }}/{{$data->id}}" class="btn btn-success btn-xs pull-right"  >
-                                <span class="glyphicon glyphicon-plus"></span>
+                                <span class="glyphicon glyphicon-plus">Add</span>
                                 </a>
                             </td>
                             <td class="record_duration" data-duration="{{$data->duration}}" data-time="{{$data->time}}">{{$data->duration}} {{$data->time}}</td>

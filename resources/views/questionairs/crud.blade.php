@@ -11,8 +11,9 @@
                     Add Question
                     </button>
                 </h2>
-               <!--  <form action="{{ url('questions/crud') }}" method="POST"> -->
+                <form action="{{ url('questions/crud') }}" method="POST">
                 <div id="{{$id}}" class="Questions_main_container">
+                    <input type="hidden" name="questionaire_id" value="{{$id}}">
                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 </div>
 
@@ -23,7 +24,7 @@
                         <button id="submit" name="submit" class="btn btn-success save_Q">Save</button>
                     </div>
                 </div>
-              <!--  </form>  -->
+               </form> 
             </fieldset>
         </div>
     </div>

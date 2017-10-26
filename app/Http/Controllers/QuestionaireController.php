@@ -16,9 +16,9 @@ class QuestionaireController extends Controller
      */
     public function index()
     {
-        $data['result']=Questionaire::all();
+        $data['result']=Questionaire::with('questions')->get();
         
-        /*dd($data);*/
+        // dd($data['result']);
         return view('questionairs/questionairs',$data);
     }
 
@@ -94,10 +94,12 @@ class QuestionaireController extends Controller
      */
     public function update(Request $request)
     {
+        // dd($request);
        $questionairs = Questionaire::find($request->input('id'));
          $questionairs->name = $request->input('name');
          $questionairs->duration = $request->input('duration');
          $questionairs->resumeable = $request->input('resume');
+         $questionairs->time = $request->input('time');
         if ($questionairs->save()) {
          return redirect('/questionairs');
         }

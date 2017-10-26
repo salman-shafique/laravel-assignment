@@ -12,8 +12,8 @@ class Questionaire extends Model
    {
    	return $this->belongsTo('App\User','user_id_fk','id');
    }
-    public function questionn()
+    public function questions()
    {
-   	return $this->hasMany('App\Questions','questionair_id_fk');
+   	return $this->hasMany('App\Questions','questionair_id_fk','id');
    }
 }

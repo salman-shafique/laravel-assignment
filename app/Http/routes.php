@@ -11,7 +11,7 @@
 |
 */
 Route::group(['middleware' => 'auth'], function() {
-	Route::get('/questionairs',		  'QuestionaireController@index' );
+	Route::get('/questionairs',		  'QuestionaireController@index' )->name('questionairs');
 	Route::get('questionairs/create', 'QuestionaireController@create');
 	Route::post('questionairs/store', 'QuestionaireController@store');
 	Route::post('questionairs/destroy', 'QuestionaireController@destroy');
